@@ -124,6 +124,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Enum\StatusEnum.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -176,10 +177,10 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerPort>49869</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:15943/</IISUrl>
-          <NTLMAuthentication>False</NTLMAuthentication>
+          <IISUrl>http://localhost:49869/</IISUrl>
+          <NTLMAuthentication>True</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
           </CustomServerUrl>

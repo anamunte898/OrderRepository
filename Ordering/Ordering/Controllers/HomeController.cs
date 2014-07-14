@@ -20,6 +20,10 @@ namespace Ordering.Controllers
             return View(model);
         }
 
+        public void Process(Order item)
+        {
+            
+        }
     }
 }
 
