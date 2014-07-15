@@ -40,18 +40,22 @@
             <input type="submit" value="Add Order" />
         </p>
     <div class="row">
-    <table data-bind="template: { name: 'orderTemplate', foreach: orders }, visible: orders().length > 0">
-    <thead>
-        <tr>
-            <th>Nume produs</th>
-            <th>Pret</th>
-            <th>Status</th>
-        </tr>
-    </thead>
-</table>
-</div>
+        <table data-bind="template: { name: 'orderTemplate', foreach: orders }, visible: orders().length > 0">
+            <thead>
+                <tr>
+                    <th>Nume produs</th>
+                    <th>Pret</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+        </table>
 
-
+    </div>
+    <div class="row">
+        Total:
+        <label data-bind="text: total"></label>
+    </div>
+    
 
    </form>
 
@@ -64,7 +68,7 @@
             <td><input  data-bind="value: productName, valueUpdate: 'afterkeydown'" /></td>
             <td><input  data-bind="value: price, valueUpdate: 'afterkeydown'" /></td>
             <td><input  data-bind="value: status, valueUpdate: 'afterkeydown'" /></td>
-            <td><input  type="button" href="#" data-bind="click: removePerson" value="Delete" /></td>
+            <td><input  type="button" href="#" data-bind="click: removeOrder" value="Delete" /></td>
         </tr>
     </script>
 <script src="~/Scripts/jquery-1.6.4.min.js"></script>

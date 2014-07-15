@@ -30,7 +30,9 @@ $(function () {
         this.newOrderProductName= ko.observable();
         this.newOrderPrice = ko.observable();
         this.newOrderStatus = ko.observable();
+        this.total = ko.observable(0);
         var orders = this.orders;
+        var total = this.total;
         var self = this;
         var notify = true;
 
@@ -42,7 +44,7 @@ $(function () {
         this.hub.client.allOrdersRetrieved = function(allOrders) {
             var mappedOrders = $.map(allOrders, function(order) {
                 return new orderViewModel(order.Id, order.FirstName,
-                    order.LastName, order.Email, self)
+                    order.LastName, order.Email, self);
             });
 
             orders(mappedOrders);
@@ -67,6 +69,7 @@ $(function () {
         this.hub.client.orderCreated = function (newOrder) {
             orders.push(new orderViewModel(newOrder.Id, newOrder.ProductName, newOrder.Price,
                 newOrder.Status, self));
+            total(total() + newOrder.Price);
         };
 
         this.hub.client.orderRemoved = function(id) {
