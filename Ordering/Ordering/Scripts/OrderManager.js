@@ -2,30 +2,30 @@
 $(function () {
     function orderViewModel(id, productName, price, status,owner) {
         this.id = id;
-        this.productName = ko.observable(firstName);
-        this.price = ko.observable(lastName);
-        this.status = ko.observable(email);
-        this.removePerson = function () {
-            owner.deletePerson(this.id)
-        }
+        this.productName = ko.observable(productName);
+        this.price = ko.observable(price);
+        this.status = ko.observable(status);
+        this.removeOrder = function() {
+            owner.deleteOrder(this.id);
+        };
 
         var self = this;
 
-        this.firstName.subscribe(function (newValue) {
-            owner.updatePerson(ko.toJS(self));
+        this.productName.subscribe(function (newValue) {
+            owner.updateOrder(ko.toJS(self));
         });
 
-        this.lastName.subscribe(function (newValue) {
-            owner.updatePerson(ko.toJS(self));
+        this.status.subscribe(function (newValue) {
+            owner.updateOrder(ko.toJS(self));
         });
 
-        this.email.subscribe(function (newValue) {
-            owner.updatePerson(ko.toJS(self));
+        this.price.subscribe(function (newValue) {
+            owner.updateOrder(ko.toJS(self));
         });
     }
 
     function ordersViewModel() {
-        this.hub = $.connection.personHub;
+        this.hub = $.connection.orderHub;;
         this.orders = ko.observableArray([]);
         this.newOrderProductName= ko.observable();
         this.newOrderPrice = ko.observable();
@@ -34,9 +34,10 @@ $(function () {
         var self = this;
         var notify = true;
 
-        this.init = function () {
+        this.init = function() {
             this.hub.server.getAll();
-        }
+        };
+
 
         this.hub.client.allOrdersRetrieved = function(allOrders) {
             var mappedOrders = $.map(allOrders, function(order) {
@@ -76,15 +77,15 @@ $(function () {
         };
 
         this.createOrder = function() {
-            var order = { productName: this.newOrderProductName(), price: this.newOrderPrice(), status: this.newOrderStatus() };
-            this.hub.server.add(order).done(function() {
+            var order = { productName: this.newOrderProductName(), price: this.newOrderPrice()};
+            this.hub.server.addOrder(order).done(function () {
                 console.log('order saved!');
             }).fail(function(error) {
                 console.warn(error);
             });
-            this.newProductName('');
-            this.newProductPrice('');
-            this.newProducStatus('');
+            this.newOrderProductName('');
+            this.newOrderPrice('');
+            this.newOrderStatus('');
         };
 
         this.deleteOrder = function(id) {
