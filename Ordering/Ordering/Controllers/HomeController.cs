@@ -10,20 +10,12 @@ namespace Ordering.Controllers
         //
         // GET: /Home/
         [AllowAnonymous]
-        public ActionResult Index(bool isAdmin = true)
+        public ActionResult Order(bool isAdmin = true)
         {
-            var model = new OrderModel
-            {
-                IsAdmin = isAdmin,
-                OrderList = new List<Order> {new Order() {Price = 10, ProductName = "ceva", Status = StatusEnum.New}}
-            };
+            var model = new OrderModel();
             return View(model);
         }
 
-        public void Process(Order item)
-        {
-            
-        }
     }
 }
 

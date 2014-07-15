@@ -1,4 +1,5 @@
-﻿using System.Security.Principal;
+﻿using System.Collections.Generic;
+using System.Security.Principal;
 using Microsoft.AspNet.SignalR;
 using Ordering.Enums;
 using Ordering.Models;
@@ -9,25 +10,28 @@ namespace Ordering.Hubs
     {
         public void RequestOrder(string message)
         {
-            var userName = WindowsIdentity.GetCurrent().Name;
-            Groups.Add(Context.ConnectionId, "admin");
-            Clients.All.addNewMessageToPage(userName, message);
-        }
-
-        public void SendOrder(string productName,double price)
-        {
             var windowsIdentity = WindowsIdentity.GetCurrent();
             if (windowsIdentity != null)
             {
                 var userName = windowsIdentity.Name;
-                var order = new Order()
-                {
-                    Price = price,
-                    ProductName = productName,
-                    Status = StatusEnum.New
-                };
-                Clients.Group("admin").addOrder(order);
+                Groups.Add(Context.ConnectionId, "admin");
+                Clients.All.addNewMessageToPage(userName, message);
             }
+        }
+
+        public void AddOrder(OrderModel newOrder)
+        {
+            //todo add code for saving in the database
+            newOrder.Status = StatusEnum.New;
+            Clients.All.orderCreated(newOrder);
+
+        }
+
+        public void GetAll()
+        {
+            //todo: get from database
+            var orders = new List<OrderModel>();
+            Clients.Caller.allOrdersRetrieved(orders);
         }
     }
 }

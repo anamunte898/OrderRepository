@@ -1,0 +1,76 @@
+﻿
+@{
+    ViewBag.Title = "Chat";
+}
+@using System.Diagnostics
+@using Ordering.Models
+@model Ordering.Models.OrderModel
+<h2>Order</h2>
+<form data-bind="submit: createOrder">
+@if (Model.IsAdmin)
+{
+    <div class="container">
+        <input type="text" id="message" />
+        <input type="button" id="sendmessage" value="Send" />
+        
+        <ul id="discussion">
+        </ul>
+    </div>
+}
+    
+@Html.HiddenFor(model => model.Id)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ProductName)
+        </div>
+    <div class="editor-field">
+        @Html.TextBoxFor(model => model.ProductName,  new { @data_bind = "value: newOrderProductName" })
+         
+    </div>
+    
+     <div class="editor-label">
+            @Html.LabelFor(model => model.Price)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.Price,  new { @data_bind = "value: newOrderPrice" })
+         
+        </div>
+
+     <p>
+            <input type="submit" value="Add Order" />
+        </p>
+    <div class="row">
+    <table data-bind="template: { name: 'orderTemplate', foreach: orders }, visible: orders().length > 0">
+    <thead>
+        <tr>
+            <th>Nume produs</th>
+            <th>Pret</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+</table>
+</div>
+
+
+
+   </form>
+
+
+
+
+@section Scripts {
+
+    <script type="text/html" id="personTemplate">
+        <!--Data Template-->
+        <tr>
+            <td><input  data-bind="value: productName, valueUpdate: 'afterkeydown'" /></td>
+            <td><input  data-bind="value: price, valueUpdate: 'afterkeydown'" /></td>
+            <td><input  data-bind="value: status, valueUpdate: 'afterkeydown'" /></td>
+            <td><input  type="button" href="#" data-bind="click: removePerson" value="Delete" /></td>
+        </tr>
+    </script>
+    <script src="~/Scripts/jquery.signalR-2.1.0.min.js"></script>
+    <script src="~/Scripts/knockout-3.1.0.debug.js"></script>
+    <script src="~/Scripts/OrderManager.js"></script>
+ 
+}
