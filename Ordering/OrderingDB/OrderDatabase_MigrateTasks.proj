@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="MigrateOracle;MigrateMSSQL">
+  <PropertyGroup>
+    <ConnectionStringOracle>Data Source=172.16.123.3/ORADB11G;User ID=TNIDEVTEMP;Password=12345</ConnectionStringOracle>
+    <ConnectionStringSQLServer>Server=.;uid=sa;pwd=1234%asd;Database=Bemis</ConnectionStringSQLServer>
+  </PropertyGroup>
+  <UsingTask TaskName="FluentMigrator.MSBuild.Migrate" AssemblyFile="..\..\Lib\FluentMigrator.MSBuild\FluentMigrator.MSBuild.dll" />
+
+  <!--Common targets for both sources-->
+
+  <Target Name="MigrateRollbackAll">
+ 
+    <CallTarget Targets="MigrateSQLRollbackAll" />
+  </Target>
+
+  <Target Name="MigrateRollback1">
+  
+     <CallTarget Targets="MigrateSQLRollback1" />
+  </Target>
+  
+  <!--Build solution before deploy-->
+  <Target Name="BuildProj">
+    <ItemGroup>
+      <ProjectsToBuild Include="$(SourceRoot)EmerGISDatabase.sln"/>
+    </ItemGroup>
+    <PropertyGroup>
+      <Configuration Condition=" '$(Configuration)'=='' ">Debug</Configuration>
+    </PropertyGroup>
+    <Message Text="Building project EmerGISDatabase.sln" />
+    <MSBuild Projects="@(ProjectsToBuild)" Properties="Configuration=$(Configuration)" ContinueOnError="false" >
+    </MSBuild>
+  </Target>
+
+  <!--SQLSERVER-->
+
+  <Target Name="MigrateMSSQL">
+    <CallTarget Targets="BuildProj" />
+    <CallTarget Targets="MigrateSQL" />
+  </Target>
+
+  <Target Name="MigrateSQL">
+    <Message Text="Starting FluentMigrator Migration" />
+    <Migrate Database="sqlserver" 
+             Connection="$(ConnectionStringSQLServer)" 
+             Target="EmerGISDatabase/bin/Debug/EmerGISDatabase.dll" 
+             Task="migrate" 
+             Verbose="True" 
+             Profile="Common"/>
+  </Target>
+
+  <Target Name="MigrateSQLRollbackAll">
+    <Message Text="Starting FluentMigrator Migration Rollback All" />
+    <Migrate Database="sqlserver" Connection="$(ConnectionStringSQLServer)" Target="EmerGISDatabase/bin/Debug/EmerGISDatabase.dll" Task="rollback:all" Verbose="True" 
+/>
+  </Target>
+
+  
+  
+  
+</Project>
