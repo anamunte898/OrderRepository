@@ -1,10 +1,12 @@
 ﻿
 @{
-    ViewBag.Title = "Chat";
+    ViewBag.Title = "Order";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 @using System.Diagnostics
 @using Ordering.Models
 @model Ordering.Models.OrderModel
+
 <h2>Order</h2>
 <form data-bind="submit: createOrder">
 @if (Model.IsAdmin)
@@ -37,10 +39,10 @@
         </div>
 
      <p>
-            <input type="submit" value="Add Order" />
+            <input type="submit" value="Add Order" class="btn btn-default"/>
         </p>
     <div class="row">
-        <table data-bind="template: { name: 'orderTemplate', foreach: orders }, visible: orders().length > 0">
+        <table  class="table table-bordered"data-bind="template: { name: 'orderTemplate', foreach: orders }, visible: orders().length > 0">
             <thead>
                 <tr>
                     <th>Nume produs</th>
@@ -62,13 +64,13 @@
 
 
 
-    <script type="text/html" id="orderTemplate">
-        <!--Data Template-->
-        <tr>
-            <td><input  data-bind="value: productName, valueUpdate: 'afterkeydown'" /></td>
-            <td><input  data-bind="value: price, valueUpdate: 'afterkeydown'" /></td>
-            <td><input  data-bind="value: status, valueUpdate: 'afterkeydown'" /></td>
-            <td><input  type="button" href="#" data-bind="click: removeOrder" value="Delete" /></td>
+<script type="text/html" id="orderTemplate">
+    <!--Data Template-->
+    <tr>
+        <td><input class="ui-corner-all" data-bind="value: productName, valueUpdate: 'afterkeydown'" /></td>
+        <td><input class="ui-corner-all" data-bind="value: price, valueUpdate: 'afterkeydown'" /></td>
+        <td><input class="ui-corner-all" data-bind="value: status, valueUpdate: 'afterkeydown'" /></td>
+        <td><input class="btn btn-default" type="button" href="#" data-bind="click: removeOrder" value="Delete" /></td>
         </tr>
     </script>
 <script src="~/Scripts/jquery-1.6.4.min.js"></script>
@@ -76,4 +78,4 @@
 <script src="~/Scripts/knockout-3.1.0.debug.js"></script>
 <script src="~/signalr/hubs"></script>
     <script src="~/Scripts/OrderManager.js"  type="text/javascript"></script>
- 
+<script src="~/Scripts/bootstrap.css" type="stylesheet" ></script>
