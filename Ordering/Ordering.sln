@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ordering", "Ordering\Ordering.csproj", "{72164D31-A6AC-4F69-A455-374BC4B725FA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderingDB", "OrderingDB\OrderingDB.csproj", "{8B40E0EC-2DC9-4081-86A4-30345D3F66E2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,6 +15,10 @@ Global
 		{72164D31-A6AC-4F69-A455-374BC4B725FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{72164D31-A6AC-4F69-A455-374BC4B725FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{72164D31-A6AC-4F69-A455-374BC4B725FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B40E0EC-2DC9-4081-86A4-30345D3F66E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B40E0EC-2DC9-4081-86A4-30345D3F66E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B40E0EC-2DC9-4081-86A4-30345D3F66E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B40E0EC-2DC9-4081-86A4-30345D3F66E2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
