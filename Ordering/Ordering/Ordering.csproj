@@ -125,7 +125,6 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Hubs\OrderHub.cs" />
-    <Compile Include="Models\Order.cs" />
     <Compile Include="Models\OrderModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -170,6 +169,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Ef\OrderStore.csproj">
+      <Project>{6FAC58A2-1644-4CC7-A46B-1CDF7BE91B1B}</Project>
+      <Name>OrderStore</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

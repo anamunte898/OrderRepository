@@ -11,7 +11,7 @@ namespace OrderingDB.Schema_Objects
             Create.Table("Product")
                 .WithColumn("Id").AsInt32().PrimaryKey("PK_Product").Identity().NotNullable()
                 .WithColumn("Name").AsString().NotNullable()
-                .WithColumn("Price").AsString().NotNullable();
+                .WithColumn("Price").AsDouble().NotNullable();
         }
 
         public override void Down()
