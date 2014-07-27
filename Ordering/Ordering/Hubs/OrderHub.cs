@@ -25,12 +25,18 @@ namespace Ordering.Hubs
         {
             //todo add code for saving in the database
             var repository= new OrderRepository();
+            var windowsIdentity = WindowsIdentity.GetCurrent();
+            User user = null;
+            if (windowsIdentity != null)
+            {
+                user = repository.GetUserByUsername(windowsIdentity.Name);
+            }
             repository.AddOrder(new Order()
             {
                ProductId=1,
                OrderDate = DateTime.Now,
                Status="New",
-               UserId=1,
+               User=user,
             });
             
             newOrder.Status = StatusEnum.New;
@@ -43,6 +49,14 @@ namespace Ordering.Hubs
             //todo: get from database
             var orders = new List<OrderModel>();
             Clients.Caller.allOrdersRetrieved(orders);
+        }
+
+        public void RemoveOrder(int deletedOrderId)
+        {
+            var repository = new OrderRepository();
+            var order = repository.GetOrderById(deletedOrderId);
+            repository.DeleteOrder(order);
+            Clients.All.orderRemoved(deletedOrderId);
         }
     }
 }

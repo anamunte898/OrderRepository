@@ -91,8 +91,8 @@ $(function () {
             this.newOrderStatus('');
         };
 
-        this.deleteOrder = function(id) {
-            this.hub.server.delete(id);
+        this.removeOrder = function(id) {
+            this.hub.server.removeOrder(id);
         };
 
         this.updateOrder = function(order) {

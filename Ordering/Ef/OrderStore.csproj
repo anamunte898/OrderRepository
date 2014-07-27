@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Ef</RootNamespace>
     <AssemblyName>Ef</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -20,6 +21,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -28,6 +30,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework">
@@ -39,6 +42,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
@@ -48,53 +52,51 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="OrderRepository.cs" />
+    <Compile Include="Order.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Order.Context.tt</DependentUpon>
+    </Compile>
     <Compile Include="Order.cs">
-      <DependentUpon>OrderingModel.tt</DependentUpon>
+      <DependentUpon>Order.tt</DependentUpon>
     </Compile>
-    <Compile Include="OrderingModel.Context.cs">
+    <Compile Include="Order.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>OrderingModel.Context.tt</DependentUpon>
+      <DependentUpon>Order.edmx</DependentUpon>
     </Compile>
-    <Compile Include="OrderingModel.cs">
+    <Compile Include="Order1.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>OrderingModel.tt</DependentUpon>
+      <DependentUpon>Order.tt</DependentUpon>
     </Compile>
-    <Compile Include="OrderingModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>OrderingModel.edmx</DependentUpon>
-    </Compile>
+    <Compile Include="OrderRepository.cs" />
     <Compile Include="Product.cs">
-      <DependentUpon>OrderingModel.tt</DependentUpon>
+      <DependentUpon>Order.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="User.cs">
-      <DependentUpon>OrderingModel.tt</DependentUpon>
+      <DependentUpon>Order.tt</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EntityDeploy Include="OrderingModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>OrderingModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="App.Config" />
-    <None Include="OrderingModel.Context.tt">
+    <EntityDeploy Include="Order.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Order.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Order.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>OrderingModel.edmx</DependentUpon>
-      <LastGenOutput>OrderingModel.Context.cs</LastGenOutput>
+      <DependentUpon>Order.edmx</DependentUpon>
+      <LastGenOutput>Order.Context.cs</LastGenOutput>
     </None>
-    <None Include="OrderingModel.edmx.diagram">
-      <DependentUpon>OrderingModel.edmx</DependentUpon>
+    <None Include="Order.edmx.diagram">
+      <DependentUpon>Order.edmx</DependentUpon>
     </None>
-    <None Include="OrderingModel.tt">
+    <None Include="Order.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>OrderingModel.edmx</DependentUpon>
-      <LastGenOutput>OrderingModel.cs</LastGenOutput>
+      <DependentUpon>Order.edmx</DependentUpon>
+      <LastGenOutput>Order1.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
   </ItemGroup>

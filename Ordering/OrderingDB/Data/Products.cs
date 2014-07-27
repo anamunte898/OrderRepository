@@ -2,7 +2,7 @@
 
 namespace OrderingDB.Data
 {
-    [Migration(201405281245)]
+    [Migration(201407271214)]
     public class Products : Migration
     {
         public override void Up()

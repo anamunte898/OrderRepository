@@ -2,7 +2,7 @@
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="MigrateMSSQL">
   <PropertyGroup>
 
-    <ConnectionStringSQLServer>Server=.;uid=sa;pwd=1234%asd;Database=Order</ConnectionStringSQLServer>
+    <ConnectionStringSQLServer>Server=.\SqlExpress;uid=sa;pwd=1234%asd;Database=Order</ConnectionStringSQLServer>
   </PropertyGroup>
   <UsingTask TaskName="FluentMigrator.MSBuild.Migrate" AssemblyFile="..\..\Ordering\packages\FluentMigrator.1.2.1.0\tools\FluentMigrator.MSBuild.dll" />
 
