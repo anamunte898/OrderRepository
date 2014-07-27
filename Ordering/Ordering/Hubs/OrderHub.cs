@@ -31,15 +31,17 @@ namespace Ordering.Hubs
             {
                 user = repository.GetUserByUsername(windowsIdentity.Name);
             }
-            repository.AddOrder(new Order()
+            var order = new Order()
             {
-               ProductId=1,
-               OrderDate = DateTime.Now,
-               Status="New",
-               User=user,
-            });
+                ProductId = 1,
+                OrderDate = DateTime.Now,
+                Status = "New",
+                User = user,
+            };
+            repository.AddOrder(order);
             
             newOrder.Status = StatusEnum.New;
+            newOrder.Id = order.Id;
             Clients.All.orderCreated(newOrder);
 
         }

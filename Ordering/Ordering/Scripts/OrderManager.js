@@ -90,8 +90,8 @@ $(function () {
             this.newOrderPrice('');
             this.newOrderStatus('');
         };
-
-        this.removeOrder = function(id) {
+       
+        this.deleteOrder = function(id) {
             this.hub.server.removeOrder(id);
         };
 
