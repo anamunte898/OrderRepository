@@ -9,6 +9,10 @@ $(function () {
             owner.deleteOrder(this.id);
         };
 
+        this.processOrder = function () {
+            owner.prepareOrder(this.id);
+        };
+
         var self = this;
 
         this.productName.subscribe(function (newValue) {
@@ -62,6 +66,9 @@ $(function () {
             notify = true;
         };
 
+
+       
+
         this.hub.client.raiseError = function(error) {
             $("#error").text(error);
         };
@@ -78,7 +85,12 @@ $(function () {
             })[0];
             orders.remove(order);
         };
-
+        this.hub.client.orderProcessed = function (id) {
+            var order = ko.utils.arrayFilter(orders(), function (value) {
+                return value.id == id;
+            })[0];
+            order.status('Processed');
+        };
         this.createOrder = function() {
             var order = { productName: this.newOrderProductName(), price: this.newOrderPrice()};
             this.hub.server.addOrder(order).done(function () {
@@ -93,6 +105,10 @@ $(function () {
        
         this.deleteOrder = function(id) {
             this.hub.server.removeOrder(id);
+        };
+
+        this.prepareOrder = function (id) {
+            this.hub.server.processOrder(id);
         };
 
         this.updateOrder = function(order) {

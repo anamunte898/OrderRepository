@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Security.Principal;
 using Ef;
 using Microsoft.AspNet.SignalR;
+using Newtonsoft.Json;
 using Ordering.Enums;
 using Ordering.Models;
 
@@ -24,7 +25,7 @@ namespace Ordering.Hubs
         public void AddOrder(OrderModel newOrder)
         {
             //todo add code for saving in the database
-            var repository= new OrderRepository();
+            var repository = new OrderRepository();
             var windowsIdentity = WindowsIdentity.GetCurrent();
             User user = null;
             if (windowsIdentity != null)
@@ -39,7 +40,7 @@ namespace Ordering.Hubs
                 User = user,
             };
             repository.AddOrder(order);
-            
+
             newOrder.Status = StatusEnum.New;
             newOrder.Id = order.Id;
             Clients.All.orderCreated(newOrder);
@@ -59,6 +60,16 @@ namespace Ordering.Hubs
             var order = repository.GetOrderById(deletedOrderId);
             repository.DeleteOrder(order);
             Clients.All.orderRemoved(deletedOrderId);
+        }
+
+        public void ProcessOrder(int deletedOrderId)
+        {
+            var repository = new OrderRepository();
+            var order = repository.GetOrderById(deletedOrderId);
+            order.Status = StatusEnum.Processed.ToString();
+            repository.EditOrder(order);
+          
+            Clients.All.orderProcessed(order.Id);
         }
     }
 }

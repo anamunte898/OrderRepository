@@ -111,7 +111,7 @@ namespace OrderingDB.Data
             Insert.IntoTable("Product").Row(new { Name = "PIZZA PERSONALIZATA 5 TOPPING-URI", Price = "20" });
             Insert.IntoTable("Product").Row(new { Name = "FOCACCIA SIMPLA", Price = "4" });
             Insert.IntoTable("Product").Row(new { Name = "FOCACCIA PARMEZAN", Price = "6" });
-            Insert.IntoTable("Product").Row(new { Name = "TOPPING-URI", Price = "2,5" });
+            Insert.IntoTable("Product").Row(new { Name = "TOPPING-URI", Price = "2.5" });
             Insert.IntoTable("Product").Row(new { Name = "TOPPING-URI", Price = "5" });
             Insert.IntoTable("Product").Row(new { Name = "SOSURI", Price = "3" });
             Insert.IntoTable("Product").Row(new { Name = "PORK TANDOORI", Price = "18" });

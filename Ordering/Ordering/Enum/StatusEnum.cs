@@ -3,7 +3,7 @@
     public enum StatusEnum
     {
         New,
-        Proceesing,
+        Processed,
         Paid,
         Invalid
     }
