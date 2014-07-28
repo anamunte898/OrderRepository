@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+
+<!--[if IE 7]>
+<html class="ie ie7" lang="en-US"><![endif]-->
+<!--[if IE 8]>
+<html class="ie ie8" lang="en-US"><![endif]-->
+<!--[if !(IE 7) | !(IE 8)  ]><!-->
+
+<html lang="en-US"><!--<![endif]-->
+
+<head>
+
+
+<meta charset="UTF-8">	<!--<meta name="viewport" content="width=device-width, initial-scale=1.0" />-->   
+ <title>Mic Dejun | Categories | Graffiti Urban Food</title>		
+ <link rel="profile" href="http://gmpg.org/xfn/11">	
+ <link rel="pingback" href="http://www.graffitifoods.ro/xmlrpc.php">	<!-- Load Font Awsome -->
+ <link type="text/css" href="http://www.graffitifoods.ro/wp-content/themes/graffiti/libraries/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+ <!--[if lt IE 8]>		<link type="text/css" href="libraries/font-awesome/css/font-awesome-ie7.min.css" rel="stylesheet" />	<![endif]-->
+ <link type="text/css" href="http://www.graffitifoods.ro/wp-content/themes/graffiti/assets/css/fonts.css" rel="stylesheet" />
+ <link type="text/css" href="http://www.graffitifoods.ro/wp-content/themes/graffiti/assets/css/slider.css" rel="stylesheet" />	
+ <link type="text/css" href="http://www.graffitifoods.ro/wp-content/themes/graffiti/assets/css/style.css" rel="stylesheet" />	
+ <link type="text/css" href="http://www.graffitifoods.ro/wp-content/themes/graffiti/assets/css/utils.css" rel="stylesheet" />		
+ <link type="text/css" href="http://www.graffitifoods.ro/wp-content/themes/graffiti/assets/css/responsive.css" rel="stylesheet" />	
+ <link type="text/css" href="http://www.graffitifoods.ro/wp-content/themes/graffiti/libraries/speedo-popup/source/speedo.popup.fx.css" rel="stylesheet" />
+ <link type="text/css" href="http://www.graffitifoods.ro/wp-content/themes/graffiti/libraries/speedo-popup/source/skins/default/default.css" rel="stylesheet" />	
+ <link type="text/css" href="http://www.graffitifoods.ro/wp-content/themes/graffiti/libraries/speedo-popup/source/skins/metro/metro.css" rel="stylesheet" />	
+ <!-- Load Libraries -->	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>	
+ <script src="http://www.graffitifoods.ro/wp-content/themes/graffiti/libraries/jquery-ui-1.10.3.custom.min.js"></script>
+ <script src="http://www.graffitifoods.ro/wp-content/themes/graffiti/libraries/jquery.hammer.min.js"></script>
+ <script type="text/javascript" src="http://www.graffitifoods.ro/wp-content/themes/graffiti/libraries/jquery.easing.1.3.js"></script>	
+ <!--[if lt IE 9]>		<script src="http://www.graffitifoods.ro/wp-content/themes/graffiti/libraries/html5shiv.js"></script>	<![endif]-->
+ <script src="http://www.graffitifoods.ro/wp-content/themes/graffiti/assets/js/slider.js"></script>
+ <script src="http://www.graffitifoods.ro/wp-content/themes/graffiti/assets/js/kalimo.js"></script>	
+ <script src="http://www.graffitifoods.ro/wp-content/themes/graffiti/assets/js/script.js"></script>	
+ 
+ <script src="http://www.graffitifoods.ro/wp-content/themes/graffiti/libraries/speedo-popup/source/speedo.min.js"></script>	
+ <script src="http://www.graffitifoods.ro/wp-content/themes/graffiti/libraries/speedo-popup/source/speedo.popup.min.js"></script>	
+ 
+ 
+  <script type="text/javascript">
+	(function($) {
+
+		$(function() {
+			if (window.location.hash.length <= 0) {
+				// Scroll to the submenu.
+				$('html,body').animate({
+
+					scrollTop : $('#meniu-submenu').offset().top - 101
+				}, 1000, 'easeInOutBack');
+			}
+		});
+	})(jQuery);
+
+ </script>
+
+ 		
+
+ <link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.graffitifoods.ro/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.graffitifoods.ro/wp-includes/wlwmanifest.xml" /> 
+<meta name="generator" content="WordPress 3.9.1" />
+ 
+ 
+ 
+<script>
+	(function(i, s, o, g, r, a, m) {
+		i['GoogleAnalyticsObject'] = r;
+		i[r] = i[r] ||
+		function() {
+			(i[r].q = i[r].q || []).push(arguments)
+		}, i[r].l = 1 * new Date();
+		a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+		a.async = 1;
+		a.src = g;
+		m.parentNode.insertBefore(a, m)
+	})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+	ga('create', 'UA-44146536-1', 'graffitifoods.ro');
+	ga('send', 'pageview'); 
+</script>
+<script type="text/javascript">
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-44146536-2']);
+	_gaq.push(['_trackPageview']);
+	(function() {
+		var ga = document.createElement('script');
+		ga.type = 'text/javascript';
+		ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'stats.g.doubleclick.net/dc.js';
+		var s = document.getElementsByTagName('script')[0];
+		s.parentNode.insertBefore(ga, s);
+	})(); 
+</script>	
+<script>(function() {
+  var _fbq = window._fbq || (window._fbq = []);
+  if (!_fbq.loaded) {
+    var fbds = document.createElement('script');
+    fbds.async = true;
+    fbds.src = '//connect.facebook.net/en_US/fbds.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(fbds, s);
+    _fbq.loaded = true;
+  }
+  _fbq.push(['addPixelId', "282830631879998"]);
+})();
+window._fbq = window._fbq || [];
+window._fbq.push(["track", "PixelInitialized", {}]);
+</script>
+<noscript><img height="1" width="1" border="0" alt="" style="display:none" src="https://www.facebook.com/tr?id=282830631879998&amp;ev=NoScript" /></noscript>
+ </head>
+ 
+ <body>	
+ <div id="fb-root"></div><script>
+	( function(d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id))
+				return;
+			js = d.createElement(s);
+			js.id = id;
+			js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=254208004622620";
+			fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk')); 
+</script>
+ <!-- Google Code for RLSA - Graffiti -->	<!-- Remarketing tags may not be associated with personally identifiable information or placed on pages related to sensitive categories. For instructions on adding this tag and more information on the above requirements, read the setup guide: google.com/ads/remarketingsetup -->	<script type="text/javascript">
+	/* <![CDATA[ */
+	var google_conversion_id = 975749145;
+	var google_conversion_label = "N81uCP_UlAgQmYCj0QM";
+	var google_custom_params = window.google_tag_params;
+	var google_remarketing_only = true;
+	/* ]]> */
+	</script>		<header class="main-header" >		<div class="content" style="position:relative; height: 100%">        	<a href="http://www.graffitifoods.ro" class="logo">Graffiti</a>			<a href="#" class="show-menu"></a>            <nav class="menu">				<ul>					<li><a href="http://www.graffitifoods.ro#home" title="Acasa">Acasa</a></li>					<li><a href="http://www.graffitifoods.ro#graffiti-urban-food" onclick="_gaq.push(['_trackEvent', 'Graffiti-Urban_Food', 'Click_Graffiti', 'Meniu'])" title="Graffiti urban food">Graffiti-urban food</a></li>		
+
+
+ <li><a href="http://www.graffitifoods.ro#meniu" onclick="_gaq.push(['_trackEvent', 'Meniu-Mancare', 'Click_Meniu', 'Meniu'])" title="Meniu">Meniu</a></li>		
+ <li><a href="#comenzi" class="selected"  onclick="_gaq.push(['_trackEvent', 'Comenzi', 'Click_Comenzi', 'Meniu'])" title="Comenzi">Comenzi</a></li>	
+
+<li><a href="http://www.graffitifoods.ro/blog" class="selected"  onclick="_gaq.push(['_trackEvent', 'Blog', 'Click_Blog', 'Meniu'])" title="Blog">Blog</a></li>	
+
+ <li><a href="#contact" title="Contact" onclick="_gaq.push(['_trackEvent', 'Contact', 'Click_Contact', 'Meniu'])">Contact</a></li>					<li> <div class="fb-like" data-href="https://www.facebook.com/graffitifoods" data-layout="button" data-action="like" data-show-faces="true" data-share="false"></div></li>				</ul>            </nav>			<div class="phone-holder">				<div class="phone-icon"></div>				<ul class="phone-numbers">													<li><a href="tel:021.440.2525" onclick="_gaq.push(['_trackEvent', 'Telefon', 'Click_NumarTelefon', 'Telefoane'])">021.440.2525</a></li>															<li><a href="tel:0749.433.433" onclick="_gaq.push(['_trackEvent', 'Telefon', 'Click_NumarTelefon', 'Telefoane'])">0749.433.433</a></li>															<li><a href="tel:0733.695.443" onclick="_gaq.push(['_trackEvent', 'Telefon', 'Click_NumarTelefon', 'Telefoane'])">0733.695.443</a></li>															<li><a href="tel:0762.446.128" onclick="_gaq.push(['_trackEvent', 'Telefon', 'Click_NumarTelefon', 'Telefoane'])">0762.446.128</a></li>											</ul>			</div>			<!--<div class="search-box">				<form role="search" method="get" id="searchform" class="searchform" action="http://www.graffitifoods.ro">					<input type="text" name="s" id="s" placeholder="Introduceti termenul de cautare" />					<input type="submit" id="searchsubmit" value="Cautare" class="button" />				</form>			</div>-->    	</div>	</header>		<div id="pages">		<a href="#" class="back-to-top"></a>
+		<!-- Meniu Livrare la Domiciliu Page -->
+		<section id="meniu-livrare" class="page">
+			<div class="content">
+				<header class="page-header">
+					<h1>MENIU LIVRARE LA DOMICILIU</h1>
+					<h2>MIC DEJUN</h2>
+				</header>
+				<article class="page-content">
+					<h2>COMANDA ACUM!</h2>
+				</article>
+			</div>
+		</section>
+
+		<section id="meniu-submenu" class="meniu-submenu">
+			<div class="content">
+					<ul>
+					<li><a href="http://www.graffitifoods.ro/meniu/mic-dejun/" class="selected">MIC DEJUN</a></li>
+							<li><a href="http://www.graffitifoods.ro/meniu/supe/">SUPE</a></li>
+			</ul><ul>				<li><a href="http://www.graffitifoods.ro/meniu/salate/">SALATE</a></li>
+							<li><a href="http://www.graffitifoods.ro/meniu/paste/">PASTE</a></li>
+			</ul><ul>				<li><a href="http://www.graffitifoods.ro/meniu/al-forno/">AL FORNO</a></li>
+							<li><a href="http://www.graffitifoods.ro/meniu/meniu-porc/">MENIU PORC</a></li>
+			</ul><ul>				<li><a href="http://www.graffitifoods.ro/meniu/meniu-pui/">MENIU PUI</a></li>
+							<li><a href="http://www.graffitifoods.ro/meniu/meniu-peste/">MENIU PESTE</a></li>
+			</ul><ul>				<li><a href="http://www.graffitifoods.ro/meniu/meniu-vita/">MENIU VITA</a></li>
+							<li><a href="http://www.graffitifoods.ro/meniu/pizza/">PIZZA</a></li>
+			</ul><ul>				<li><a href="http://www.graffitifoods.ro/meniu/desert-home-made/">DESERT HOME MADE!</a></li>
+							<li><a href="http://www.graffitifoods.ro/meniu/bauturi/">BAUTURI</a></li>
+				</ul>
+			</div>
+		</section>
+
+		<!-- Meniu Page -->
+		<section id="meniu" class="page" style="min-height: 100px;">
+			<div class="content">
+				<article class="page-content m-top-30">
+					<ul class="portfolio-items list">
+					<li>
+					<a href="http://www.graffitifoods.ro/meniu/mic-dejun/mic-dejun/">
+						<!--<img src="http://www.graffitifoods.ro/wp-content/themes/graffiti/assets/images/photos/mic-dejun.jpg" width="260" height="260" />-->
+						<img width="260" height="194" src="http://www.graffitifoods.ro/wp-content/uploads/2013/12/mic-dejun-260x194.jpg" class="attachment-food_list_thumb wp-post-image" alt="mic dejun" />						<div class="item-info">
+							<h1 class="title">MIC DEJUN</h1>
+							<h1 class="price">14 LEI</h1>
+							<h2 class="amount">(300 gr)<span style="font-size: 14px; text-transform: none; line-height: 25px;"><br /></span></h2>
+							<h3>INGREDIENTE:</h3>
+							<p>Mic dejun sanatos - omleta, salata mixta, foccacia, espresso / ceai</p>
+						</div>
+					</a>
+				</li>
+			</ul>				</article>
+			</div>
+		</section>
+
+		<!-- Comenzi Page -->
+		<section id="comenzi" class="page">
+			<div class="content">
+				<header class="page-header">
+					<h1>COMENZI</h1>
+				</header>
+				<article class="page-content">
+					<div class="column-300">
+						<h4>ZONE DE LIVRARE</h4>
+						<p><strong>Zona 1 - Comanda minima 25 Lei:</strong></p>
+						<p>Drumul Taberei, Razoare, Ghencea, Drumul Sarii, Prelungirea Ghencea, Bd. Timisoara, Iuliu Maniu (De la Pacii la Leu).</p>
+						<p><strong>Zona 2 - Comanda minima de 50 Lei:</strong></p>
+						<p>Cotroceni, Grozavesti, Eroilor, Rosu, Crangasi, Iuliu Maniu (de la Pacii la Autostrada).</p>
+						<p><strong>Zona 3 - Comanda minim 100 Lei: </strong></p>
+						<p>Toata celelalte zone din Bucuresti.</p>
+					</div>
+					<div class="column-300">
+						<h4>PROGRAM DE LUCRU</h4>
+						<table class="work-hours">
+							<tr>
+								<td style="width:180px">LUNI</td>
+								<td>10:00 - 23:00</td>
+							</tr>
+							<tr>
+								<td>MARTI</td>
+								<td>10:00 - 23:00</td>
+							</tr>
+							<tr>
+								<td>MIERCURI</td>
+								<td>10:00 - 23:00</td>
+							</tr>
+							<tr>
+								<td>JOI</td>
+								<td>10:00 - 23:00</td>
+							</tr>
+							<tr>
+								<td>VINERI</td>
+								<td>10:00 - 23:00</td>
+							</tr>
+							<tr>
+								<td>SAMBATA</td>
+								<td>10:00 - 23:00</td>
+							</tr>
+							<tr>
+								<td>DUMINICA</td>
+								<td>10:00 - 23:00</td>
+							</tr>
+						</table>
+					</div>
+					<div class="column-300">
+						<h4>MODALITATI DE PLATA</h4>
+						<img src="http://www.graffitifoods.ro/wp-content/themes/graffiti/assets/images/pay-method.jpg" />
+						<p>Comenzile se platesc cu numerar sau cu card bancar. Totodata, primim si bonuri de masa sau tichete cadou.</p>
+						<p>In momentul realizarii comenzii trebuie specificat ca se doreste plata cu cardul. In caz contrar comanda se plateste cu numerar.</p>
+						<p>Plata cu cardul se poate face si in locatia noastra: <br/><strong>Str. Brasov nr.16, Sector 6, Bucuresti</strong></p>
+						<p>La cerere eliberam si factura fiscala.</p>
+					</div>
+				</article>
+			</div>
+		</section>
+
+				
+		
+		<!-- Contact Page -->
+		<section id="contact" class="page">
+			<div class="we-hire">
+				<div class="content">
+					<div class="we-hire-logo"></div>
+					<div class="we-hire-data">
+						<h1>GRAFFITI URBAN FOOD ANGAJEAZA!</h1>
+						<p>Iti place sa lucrezi cu si pentru oameni?<br/>Vrei sa faci parte din echipa Graffiti??<br/><strong>Trimite-ne CV-ul tau!</strong></p>
+					</div>
+					<div class="we-hire-form-holder float-right" style="width: 260px;">
+						<form id="we-hire-form" action="" method="post" style="margin-top: 25px;" enctype="multipart/form-data">
+							<input type="text" name="name" id="field-name" class="full-width" placeholder="Nume*" required="required" />
+							<input type="email" name="email" id="field-email" class="full-width" placeholder="Email*" required="required"/>
+							<input type="text" name="cv-text" id="field-cv-text" style="margin-bottom: 10px !important; cursor: pointer;" class="full-width" placeholder="Ataseaza CV*" required="required"/>
+							<input type="file" name="cv" id="field-cv" style="display: none" />
+							<input type="submit" name="send-hire" value="Send" class="button" />
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="content">
+				<header class="page-header" style="padding-bottom: 37px;">
+					<h1>CONTACT</h1>
+				</header>
+				<article class="page-content">
+					<p style="font-size: 17px;">Ai o intrebare sau o sugestie pentru noi? Vrei sa afli cum iti pregatim mancarea preferata sau ai nevoie de sprijinul nostru in organizarea unui eveniment important pentru tine? Contacteaza-ne!</p>
+					<br />
+					<div class="column-525">
+						<p><strong>Adresa:</strong> Str. Brasov nr.16, Sector 6, Bucuresti</p>
+						<p><strong>Telefoane:</strong>
+															<a href="tel:021.440.2525">021.440.2525</a> / 
+																	<a href="tel:0749.433.433">0749.433.433</a> / 
+																	<a href="tel:0733.695.443">0733.695.443</a> / 
+																	<a href="tel:0762.446.128">0762.446.128</a> / 
+																						
+						</p>
+						<div class="img" style="background-image: url('http://maps.googleapis.com/maps/api/staticmap?center=Strada+Brasov+1,Bucuresti,B&zoom=15&size=600x300&maptype=roadmap&markers=color:blue%7Clabel:S%7C40.44.4233024,26.0334933,16z4&markers=color:green%7Clabel:G%7C40.711614,-74.012318&markers=color:red%7Clabel:C%7C40.718217,-73.998284&sensor=false');"></div>
+						<!--<img src="http://maps.googleapis.com/maps/api/staticmap?center=Strada+Brasov+1,Bucuresti,B&zoom=15&size=600x300&maptype=roadmap&markers=color:blue%7Clabel:S%7C40.44.4233024,26.0334933,16z4&markers=color:green%7Clabel:G%7C40.711614,-74.012318&markers=color:red%7Clabel:C%7C40.718217,-73.998284&sensor=false" style="margin-top: 15px;" />-->
+					</div>
+					<div class="column-340 float-right">
+						<form action="" method="post" style="margin-top: 50px;">
+							<input type="text" name="name" id="field-name" class="full-width" placeholder="Name *" required="required" />
+							<input type="email" name="email" id="field-email" class="full-width" placeholder="Email *" required="required"/>
+							<input type="text" name="subject" id="field-subject" class="full-width" placeholder="Subject *" required="required"/>
+							<textarea placeholder="Message *" name="message" class="full-width" id="field-message" required="required"></textarea>
+							<input type="submit" name="send" value="Send" class="button" onclick="_gaq.push(['_trackEvent', 'Buton_Sent', 'Click_Sent', 'Pagina-Contact'])" />
+						</form>
+					</div>
+				</article>
+			</div>
+			<div class="copyright-area">
+				<div class="content-bg">
+					<div class="content">
+						<div style="margin-top: 30px; float: left;">
+							<p><strong>COPYRIGHT © 2013 - TANDEM CLASS SRL</strong></p>
+							<p><strong>Sediu Social:</strong><br />Aleea Compozitorilor, Bloc G10, Ap. 64. Bucuresti, Sector 6<br />
+							<strong>CUI:</strong>26477691<br />
+							<strong>ONRC:</strong>j40/1145/03.02.2010</p>
+						</div>
+						<img src="http://www.graffitifoods.ro/wp-content/themes/graffiti/assets/images/footer-logo.png" style="float: right;margin-top: 65px;"/>
+					</div>
+				</div>
+				<div class="content terms">
+					<p>
+						<!--<a href="#">harta site</a> - -->
+						<a href="http://www.graffitifoods.ro/?page_id=2">termeni de utilizare</a>
+					</p>
+				</div>
+			</div>
+		</section>
+	</div>
+	<script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">	</script>
+</body>
+</html>
