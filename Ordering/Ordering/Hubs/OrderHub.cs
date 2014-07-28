@@ -22,10 +22,11 @@ namespace Ordering.Hubs
             }
         }
 
-        public void AddOrder(OrderModel newOrder)
+        public void AddOrder(int id)
         {
             //todo add code for saving in the database
             var repository = new OrderRepository();
+            var product=repository.GetProductById(id);
             var windowsIdentity = WindowsIdentity.GetCurrent();
             User user = null;
             if (windowsIdentity != null)
@@ -34,16 +35,15 @@ namespace Ordering.Hubs
             }
             var order = new Order()
             {
-                ProductId = 1,
+                Product=product,
+                ProductId = id,
                 OrderDate = DateTime.Now,
                 Status = "New",
                 User = user,
             };
             repository.AddOrder(order);
 
-            newOrder.Status = StatusEnum.New;
-            newOrder.Id = order.Id;
-            Clients.All.orderCreated(newOrder);
+            Clients.All.orderCreated(order);
 
         }
 

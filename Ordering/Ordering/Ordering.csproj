@@ -144,6 +144,7 @@
     <Content Include="Scripts\knockout-3.1.0.js" />
     <Content Include="Scripts\OrderManager.js" />
     <Content Include="Scripts\modernizr-2.8.3.min.js" />
+    <Content Include="Scripts\knockout.mapping-latest.js" />
     <Compile Include="Startup.cs" />
     <Content Include="Views\Home\Order.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />

@@ -28,6 +28,19 @@ $(function () {
         });
     }
 
+    function productViewModel(id, name, price, owner) {
+        var self = this;
+        this.id = id;
+        this.name = ko.observable(name);
+        this.price = ko.observable(price);
+       
+        this.addOrder = function () {
+            owner.createOrder(this.id);
+        };
+
+        
+    }
+
     function ordersViewModel() {
         this.hub = $.connection.orderHub;;
         this.orders = ko.observableArray([]);
@@ -39,12 +52,34 @@ $(function () {
         var total = this.total;
         var self = this;
         var notify = true;
-
+        this.products = ko.observableArray([]);
+        var products = this.products;
         this.init = function() {
             this.hub.server.getAll();
         };
+       
 
-
+        
+        GetProducts();
+        function GetProducts() {
+            $.ajax({
+                type: "GET",
+                url: "/Home/GetProducts/",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (data) {
+                   // ko.mapping.fromJS(data, {}, products);
+                    var mappedProducts=$.map(data, function (product) {
+                        return new productViewModel(product.Id, product.Name,
+                            product.Price, self);
+                    });
+                    products(mappedProducts);
+                },
+                error: function (error) {
+                    alert(error.status + "<--and--> " + error.statusText);
+                }
+            });
+        };
         this.hub.client.allOrdersRetrieved = function(allOrders) {
             var mappedOrders = $.map(allOrders, function(order) {
                 return new orderViewModel(order.Id, order.FirstName,
@@ -74,9 +109,9 @@ $(function () {
         };
 
         this.hub.client.orderCreated = function (newOrder) {
-            orders.push(new orderViewModel(newOrder.Id, newOrder.ProductName, newOrder.Price,
+            orders.push(new orderViewModel(newOrder.Id, newOrder.Product.Name, newOrder.Product.Price,
                 newOrder.Status, self));
-            total(total() + newOrder.Price);
+            total(total() + newOrder.Product.Price);
         };
 
         this.hub.client.orderRemoved = function(id) {
@@ -91,9 +126,10 @@ $(function () {
             })[0];
             order.status('Processed');
         };
-        this.createOrder = function() {
-            var order = { productName: this.newOrderProductName(), price: this.newOrderPrice()};
-            this.hub.server.addOrder(order).done(function () {
+        this.createOrder = function (id)
+        {
+          
+            this.hub.server.addOrder(id).done(function () {
                 console.log('order saved!');
             }).fail(function(error) {
                 console.warn(error);
@@ -119,9 +155,12 @@ $(function () {
     }
 
     var viewModel = new ordersViewModel();
+   
     ko.applyBindings(viewModel);
 
     $.connection.hub.start(function () {
         viewModel.init();
     });
+   
+    
 });

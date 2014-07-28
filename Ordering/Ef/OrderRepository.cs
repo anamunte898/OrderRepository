@@ -6,7 +6,7 @@ namespace Ef
 {
     public class OrderRepository
     {
-        private OrderingEntities OrderEntites { get; set; }
+        public OrderingEntities OrderEntites { get; set; }
 
         public OrderRepository()
         {
@@ -15,6 +15,10 @@ namespace Ef
         public IList<Order> GetAllOrders()
         {
             return OrderEntites.Orders.ToList();
+        }
+        public IList<Product> GetAllProducts()
+        {
+            return OrderEntites.Products.ToList();
         }
 
         public void AddOrder(Order order)
@@ -38,7 +42,10 @@ namespace Ef
         {
             return OrderEntites.Orders.Single(p => p.Id == id);
         }
-
+        public Product GetProductById(int id)
+        {
+            return OrderEntites.Products.Single(p => p.Id == id);
+        }
         public User GetUserByUsername(string username)
         {
             return OrderEntites.Users.FirstOrDefault(p => p.UserName == username);

@@ -104,7 +104,6 @@
           <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
           <Property Name="Price" Type="Double" Nullable="false" />
-          <NavigationProperty Name="Orders" Relationship="OrderModel.FK_Order_Product" FromRole="Product" ToRole="Order" />
         </EntityType>
         <EntityType Name="User">
           <Key>
@@ -112,7 +111,6 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
           <Property Name="UserName" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
-          <NavigationProperty Name="Orders" Relationship="OrderModel.FK_Order_Users" FromRole="User" ToRole="Order" />
         </EntityType>
         <Association Name="FK_Order_Product">
           <End Role="Product" Type="OrderModel.Product" Multiplicity="1" />
