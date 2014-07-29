@@ -1,11 +1,10 @@
-﻿
-@using System.Web.Optimization
+﻿@using System.Web.Optimization
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-<meta charset="utf-8" />
-<title>@ViewBag.Title</title>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title</title>
     <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
     <link href="@Url.Content("~/Content/bootstrap.css")" rel="stylesheet" type="text/css" />
     <link href="@Url.Content("~/Content/jquery-ui-1.10.4.custom.css")" rel="stylesheet" type="text/css" />
@@ -13,16 +12,16 @@
     <script src="@Url.Content("~/Scripts/modernizr-2.8.3.min.js")"></script>
     <script src="@Url.Content("~/Scripts/bootstrap.js")"></script>
 
-    <script src="@Url.Content("~/Content/bootstrap-theme.min.css")"></script>
- <script src="@Url.Content("~/Scripts/knockout.mapping-latest.js")"></script>
+    <link href="@Url.Content("~/Content/bootstrap-theme.min.css")" rel="stylesheet" type="text/css" />
+    <script src="@Url.Content("~/Scripts/knockout.mapping-latest.js")"></script>
 
- 
+
 </head>
 <body>
 
-<section id="main">
-@RenderBody()
+    <section id="main">
+        @RenderBody()
 
-</section>
+    </section>
 </body>
 </html>
