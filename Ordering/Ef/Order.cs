@@ -19,6 +19,7 @@ namespace Ef
         public int ProductId { get; set; }
         public int UserId { get; set; }
         public string Status { get; set; }
+        public int NumberOfProducts { get; set; }
     
         public virtual Product Product { get; set; }
         public virtual User User { get; set; }

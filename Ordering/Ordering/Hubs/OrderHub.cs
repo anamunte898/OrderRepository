@@ -22,7 +22,7 @@ namespace Ordering.Hubs
             }
         }
 
-        public void AddOrder(int id)
+        public void AddOrder(int id, int numberOfProducts)
         {
             //todo add code for saving in the database
             var repository = new OrderRepository();
@@ -33,18 +33,18 @@ namespace Ordering.Hubs
             {
                 user = repository.GetUserByUsername(windowsIdentity.Name);
             }
-            var order = new Order()
+            var order = new Order
             {
                 Product=product,
                 ProductId = id,
                 OrderDate = DateTime.Now,
                 Status = "New",
                 User = user,
+                NumberOfProducts = numberOfProducts
             };
             repository.AddOrder(order);
 
             Clients.All.orderCreated(order);
-
         }
 
         public void GetAll()

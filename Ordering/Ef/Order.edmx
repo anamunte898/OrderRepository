@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="OrderModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="OrderModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityContainer Name="OrderModelStoreContainer">
           <EntitySet Name="Order" EntityType="OrderModel.Store.Order" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Product" EntityType="OrderModel.Store.Product" store:Type="Tables" Schema="dbo" />
@@ -27,6 +27,7 @@
           <Property Name="ProductId" Type="int" Nullable="false" />
           <Property Name="UserId" Type="int" Nullable="false" />
           <Property Name="Status" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="NumberOfProducts" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Product">
           <Key>
@@ -67,8 +68,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="OrderModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -96,6 +96,7 @@
           <Property Name="Status" Type="String" Nullable="false" MaxLength="255" Unicode="true" FixedLength="false" />
           <NavigationProperty Name="Product" Relationship="OrderModel.FK_Order_Product" FromRole="Order" ToRole="Product" />
           <NavigationProperty Name="User" Relationship="OrderModel.FK_Order_Users" FromRole="Order" ToRole="User" />
+          <Property Type="Int32" Name="NumberOfProducts" Nullable="false" />
         </EntityType>
         <EntityType Name="Product">
           <Key>
@@ -145,6 +146,7 @@
           <EntitySetMapping Name="Orders">
             <EntityTypeMapping TypeName="OrderModel.Order">
               <MappingFragment StoreEntitySet="Order">
+                <ScalarProperty Name="NumberOfProducts" ColumnName="NumberOfProducts" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
                 <ScalarProperty Name="ProductId" ColumnName="ProductId" />

@@ -21,4 +21,18 @@ namespace OrderingDB
             Delete.Table("Order");
         }
     }
+
+    [Migration(201407302226)]
+    public class AddNumberOfProducts : Migration
+    {
+        public override void Up()
+        {
+            Alter.Table("Order").AddColumn("NumberOfProducts").AsInt32().WithDefaultValue(1).NotNullable();
+        }
+
+        public override void Down()
+        {
+            Delete.Column("NumberOfProducts").FromTable("Orders");
+        }
+    }
 }
