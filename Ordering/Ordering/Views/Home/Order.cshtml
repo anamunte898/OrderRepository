@@ -21,23 +21,28 @@
 
     @Html.HiddenFor(model => model.Id)
 
-   
+
     <div class="row">
         <table class="table table-bordered">
-            <tbody data-bind="foreach: products">
-            <tr style="border-bottom: 1px solid #000000;" >
-                <td>
-                    <span data-bind="text: name"></span>
-                </td>
-                <td>
-                    <span data-bind="text: price"></span>
-                </td>
-                <td>
-                   <input class="btn btn-default" type="button" href="#" data-bind="click:addOrder" value="Add" /></td>
-                   
-               
+            <tr>
+                <th class="col-sm-8">Product name</th>
+                <th class="col-sm-2">Price</th>
+                <th class="col-sm-2">Actions</th>
             </tr>
-        </tbody>
+            <tbody data-bind="foreach: products">
+                <tr style="border-bottom: 1px solid #000000;">
+                    <td>
+                        <span data-bind="text: name"></span>
+                    </td>
+                    <td>
+                        <span data-bind="text: price"></span>RON
+                    </td>
+                    <td>
+                        <input class="btn btn-primary" type="button" href="#" data-bind="click:addOrder" value="Add" /></td>
+
+
+                </tr>
+            </tbody>
         </table>
     </div>
     <p>
