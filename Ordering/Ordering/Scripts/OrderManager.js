@@ -1,33 +1,24 @@
 ﻿
 $(function () {
-    function orderViewModel(id, productName, price, status, numberOfProducts, owner) {
+    function orderViewModel(id, productName, price, status,username, numberOfProducts, owner) {
         this.id = id;
         this.productName = ko.observable(productName);
         this.price = ko.observable(price);
         this.status = ko.observable(status);
+        this.username = username;
         this.totalPrice = ko.observable(price * numberOfProducts);
         this.numberOfProducts = ko.observable(numberOfProducts);
         this.removeOrder = function() {
             owner.deleteOrder(this.id);
         };
 
-        this.processOrder = function () {
+        this.updateOrder = function () {
             owner.prepareOrder(this.id);
         };
 
         var self = this;
 
-        this.productName.subscribe(function (newValue) {
-            owner.updateOrder(ko.toJS(self));
-        });
-
-        this.status.subscribe(function (newValue) {
-            owner.updateOrder(ko.toJS(self));
-        });
-
-        this.price.subscribe(function (newValue) {
-            owner.updateOrder(ko.toJS(self));
-        });
+      
     }
 
     function productViewModel(id, name, price, owner) {
@@ -82,8 +73,8 @@ $(function () {
         };
         this.hub.client.allOrdersRetrieved = function(allOrders) {
             var mappedOrders = $.map(allOrders, function(order) {
-                return new orderViewModel(order.Id, order.FirstName,
-                    order.LastName, order.Email, self);
+                return new orderViewModel(order.Id, order.Product.Name, order.Product.Price,
+                order.Status, order.User.UserName, order.NumberOfProducts, self);
             });
 
             orders(mappedOrders);
@@ -107,7 +98,7 @@ $(function () {
 
         this.hub.client.orderCreated = function (newOrder) {
             orders.push(new orderViewModel(newOrder.Id, newOrder.Product.Name, newOrder.Product.Price,
-                newOrder.Status, newOrder.NumberOfProducts, self));
+                newOrder.Status,newOrder.User.UserName, newOrder.NumberOfProducts, self));
             total(total() + newOrder.Product.Price * newOrder.NumberOfProducts);
         };
 
@@ -144,11 +135,7 @@ $(function () {
             this.hub.server.processOrder(id);
         };
 
-        this.updateOrder = function(order) {
-            if (notify) {
-                this.hub.server.update(order);
-            }
-        };
+       
     }
 
     var viewModel = new ordersViewModel();

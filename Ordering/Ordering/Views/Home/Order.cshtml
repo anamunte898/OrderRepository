@@ -47,6 +47,7 @@
     </div>
     <p>
     </p>
+    <p>Comanda de azi</p>
     <div class="row">
         <table class="table table-bordered" data-bind="template: { name: 'orderTemplate', foreach: orders }, visible: orders().length > 0">
             <thead>
@@ -54,6 +55,7 @@
                     <th>Nume produs</th>
                     <th>Pret</th>
                     <th>Status</th>
+                    <th>Utilizator</th>
                 </tr>
             </thead>
         </table>
@@ -74,15 +76,17 @@
     <!--Data Template-->
     <tr>
         <td>
-            <input class="ui-corner-all" data-bind="value: productName, valueUpdate: 'afterkeydown'" /></td>
+            <input class="ui-corner-all" data-bind="value: productName" /></td>
         <td>
-            <input class="ui-corner-all" data-bind="value: price, valueUpdate: 'afterkeydown'" /></td>
+            <input class="ui-corner-all" data-bind="value: price" /></td>
         <td>
-            <input class="ui-corner-all" data-bind="value: status, valueUpdate: 'afterkeydown'" /></td>
+            <input class="ui-corner-all" data-bind="value: status" /></td>
+         <td>
+            <input class="ui-corner-all" data-bind="value: username" /></td>
         <td>
             <input class="btn btn-default" type="button" href="#" data-bind="click:removeOrder" value="Delete" /></td>
         <td>
-            <input class="btn btn-default" type="button" href="#" data-bind="click:processOrder" value="Process" /></td>
+            <input class="btn btn-default" type="button" href="#" data-bind="click:updateOrder" value="Process" /></td>
     </tr>
 </script>
 

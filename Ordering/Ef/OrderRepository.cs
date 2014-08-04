@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Data.Entity.Core.Objects;
 using System.Data.Entity.Migrations;
 using System.Linq;
 
@@ -15,6 +17,10 @@ namespace Ef
         public IList<Order> GetAllOrders()
         {
             return OrderEntites.Orders.ToList();
+        }
+        public IList<Order> GetTodaysOrders()
+        {
+            return OrderEntites.Orders.Where(o => EntityFunctions.TruncateTime(o.OrderDate) == DateTime.Today).ToList();
         }
         public IList<Product> GetAllProducts()
         {

@@ -50,7 +50,8 @@ namespace Ordering.Hubs
         public void GetAll()
         {
             //todo: get from database
-            var orders = new List<OrderModel>();
+            var repository = new OrderRepository();
+            var orders=repository.GetTodaysOrders();
             Clients.Caller.allOrdersRetrieved(orders);
         }
 
